@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace JournalEntry
 {
@@ -7,6 +8,7 @@ namespace JournalEntry
         public static Journal book = new Journal();
         public static int promptNum = 0;
         public static Prompts prompt = new Prompts();
+        public static string fileName = @"c:\Temp\journal.csv";
     }
 
     class Program
@@ -107,11 +109,31 @@ namespace JournalEntry
 
         static void ReadJournal()
         {
+            Globals.book.Clear();
+            Globals.promptNum = 0;
 
+            string[] fileIn = File.ReadAllLines(Globals.fileName);
+            foreach (string line in fileIn)
+            {
+                string[] parts = line.Split(",");
+
+                Entry e1 = new Entry();
+                e1._date = parts[0];
+                e1._prompt = parts[1];
+                e1._response = parts[2];
+
+                Globals.book.Add(e1);
+                Globals.promptNum++;
+                if (Globals.promptNum >= Globals.prompt.Max())
+                {
+                    Globals.promptNum = 0;
+                }
+            }
         }
 
         static void WriteJournal()
         {
+            Globals.book.SaveJournal(Globals.fileName);
 
         }
 

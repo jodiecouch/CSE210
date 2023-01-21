@@ -18,7 +18,7 @@ public class Prompts
         }
         else
         {
-            return prompts[4];
+            return prompts[0];
         }
 
     }
