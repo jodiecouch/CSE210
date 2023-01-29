@@ -17,12 +17,9 @@ namespace JournalEntry
 
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello Develop02 World!");
-
             int menu;
-
-            Console.WriteLine(Globals.prompt.Display(Globals.promptNum));
             Globals.promptNum = 0;
+
             do
             {
                 menu = DisplayMenu();
