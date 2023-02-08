@@ -18,9 +18,10 @@ class Program
 
                 john.Display();
                 //matt.Display();
-                Console.WriteLine("Next is word play");
+                //Console.WriteLine("Next is word play");
 
                 wp.Show();
+                //IF wp.GameOver THEN SHOW Menu2 WHICH ASK IF WANT TO CONTINUE TO PLAY
             }
         } while (play != false);
     }
