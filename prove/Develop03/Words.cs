@@ -34,10 +34,11 @@ public class WordPlay
             }
             Console.WriteLine(showMe);
         }
-        else
+        /*else
         {
-            Console.WriteLine("Game Over");
-        }
+            Console.WriteLine("Scripture Finished");
+            //OR CLEAR THE HIDDEN AND PLAY IT AGAIN
+        }*/
 
     }
 
@@ -52,11 +53,11 @@ public class WordPlay
             {
                 _hidden.Add(rNum);
                 wordAdded = true;
-                Console.Clear();
+                //Console.Clear();
             }
             //Console.WriteLine($"Hidden Count: {_hidden.Count}");
             //Console.WriteLine($"Words Length: {_words.Length}");
-        } while (wordAdded == false && _hidden.Count < _words.Length);
+        } while (wordAdded == false && WordsRemaining());
 
         return wordAdded;
     }
@@ -64,9 +65,24 @@ public class WordPlay
     /*
        foreach (int w in _hidden)
        {
-        //show which word is hidden
+        //show which word position is hidden
            Console.WriteLine(w);
        }
        */
+    public bool WordsRemaining()
+    {
+        if (_hidden.Count < _words.Length)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    public void StartOver()
+    {
+        _hidden.Clear();
+    }
 
 }
