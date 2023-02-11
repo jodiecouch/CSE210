@@ -6,7 +6,7 @@ public class Menu
     private bool _play;
     private string _text = "Press enter to play. \nType 'Q' or hit Esc to end the game." +
     Environment.NewLine +
-    " Type 'N' to get a new scripture.\nType 'A' to play the same scripture again.";
+    "Type 'N' to get a new scripture.\nType 'A' to play the same scripture again.";
 
 
     private void Prompt()
@@ -22,8 +22,6 @@ public class Menu
             Prompt();
             inputKey = Console.ReadKey(true);
             _input = inputKey.KeyChar.ToString().ToUpper();
-
-            //Console.WriteLine($"Input was {_input}");
 
             if (inputKey.Key == ConsoleKey.Enter)
             {

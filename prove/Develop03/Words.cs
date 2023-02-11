@@ -34,12 +34,6 @@ public class WordPlay
             }
             Console.WriteLine(showMe);
         }
-        /*else
-        {
-            Console.WriteLine("Scripture Finished");
-            //OR CLEAR THE HIDDEN AND PLAY IT AGAIN
-        }*/
-
     }
 
     private bool WordHidden()
@@ -53,22 +47,14 @@ public class WordPlay
             {
                 _hidden.Add(rNum);
                 wordAdded = true;
-                //Console.Clear();
             }
-            //Console.WriteLine($"Hidden Count: {_hidden.Count}");
-            //Console.WriteLine($"Words Length: {_words.Length}");
+
         } while (wordAdded == false && WordsRemaining());
 
         return wordAdded;
     }
 
-    /*
-       foreach (int w in _hidden)
-       {
-        //show which word position is hidden
-           Console.WriteLine(w);
-       }
-       */
+
     public bool WordsRemaining()
     {
         if (_hidden.Count < _words.Length)

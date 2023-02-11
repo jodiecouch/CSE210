@@ -1,0 +1,66 @@
+{
+    "scriptures":[
+    
+    {
+        "book": "John",
+        "chapter": "3",
+        "verses": "16",
+        "text": "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life."
+    },
+    {
+        "book": "John",
+        "chapter": "3",
+        "verses": "5",
+        "text": "Jesus answered, Verily, verily, I say unto thee, Except a man be born of water and of the Spirit, he cannot enter into the kingdom of God."
+    },
+    {
+        "book": "John",
+        "chapter": "3",
+        "verses": "12",
+        "text": "If I have told you earthly things, and ye believe not, how shall ye believe, if I tell you of heavenly things?"
+    },
+    {
+        "book": "John",
+        "chapter": "3",
+        "verses": "17",
+        "text": "For God sent not his Son into the world to condemn the world; but that the world through him might be saved."
+    },
+    {
+        "book": "Proverbs",
+        "chapter": "1",
+        "verses": "7",
+        "text": "The fear of the Lord is the beginning of knowledge: but fools despise wisdom and instruction."
+    },
+    {
+        "book": "Proverbs",
+        "chapter": "1",
+        "verses": "29-33",
+        "text": "29 For that they hated knowledge, and did not choose the fear of the Lord: 30 They would none of my counsel: they despised all my reproof. 31 Therefore shall they eat of the fruit of their own way, and be filled with their own devices. 32 For the turning away of the simple shall slay them, and the prosperity of fools shall destroy them. 33 But whoso hearkeneth unto me shall dwell safely, and shall be quiet from fear of evil."
+    },
+    {
+        "book": "Proverbs",
+        "chapter": "2",
+        "verses": "1-5",
+        "text": "1 My son, if thou wilt receive my words, and hide my commandments with thee; 2 So that thou incline thine ear unto wisdom, and apply thine heart to understanding; Yea, if thou criest after knowledge, and liftest up thy voice for understanding; 4 If thou seekest her as silver, and searchest for her as for hid treasures; 5 Then shalt thou understand the fear of the Lord, and find the knowledge of God."
+    },
+    {
+        "book": "Proverbs",
+        "chapter": "3",
+        "verses": "13",
+        "text": "Happy is the man that findeth wisdom, and the man that getteth understanding."
+    },
+    {
+        "book": "Proverbs",
+        "chapter": "3",
+        "verses": "19",
+        "text": "The Lord by wisdom hath founded the earth; by understanding hath he established the heavens."
+    },
+    {
+        "book": "Ephesians 2",
+        "chapter": "2",
+        "verses": "8-9",
+        "text": "8 For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: 9 Not of works, lest any man should boast."
+    }
+
+    ]
+}

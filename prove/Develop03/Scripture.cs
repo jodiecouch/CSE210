@@ -7,6 +7,7 @@ public class Scripture
 
     private string _text;
 
+    /*
     public Scripture()
     {
         _book = "John";
@@ -23,6 +24,15 @@ public class Scripture
         _text = "text for this scripture";
 
     }
+    */
+    public Scripture(string book, string chapter, string verse, string text)
+    {
+        _book = book;
+        _chapter = chapter;
+        _verses = verse;
+        _text = text;
+
+    }
     public void Display()
     {
         Console.WriteLine($"{_book} {_chapter}:{_verses}");
@@ -32,20 +42,7 @@ public class Scripture
     {
         Console.WriteLine($"{_book} {_chapter}:{_verses}");
     }
-    /*
-    public string Book()
-    {
-        return _book;
-    }
-    public string Chapter()
-    {
-        return _chapter;
-    }
-    public string Verse()
-    {
-        return _verses;
-    }
-    */
+
     public string Text()
     {
         return _text;
