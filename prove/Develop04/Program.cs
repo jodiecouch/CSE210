@@ -12,7 +12,10 @@ class Program
             menu.Display();
             if (menu.Input() == "1")
             {
+                Console.Clear();
                 Console.WriteLine("Breathing");
+                Breathing game = new Breathing();
+                game.Play();
 
             }
             else if (menu.Input() == "2")
