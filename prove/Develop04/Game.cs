@@ -4,7 +4,7 @@ public class Game
 {
     private string _activityName;
     private string _activityDescription;
-    private int _duration;
+    protected int _duration;
     const int _defaultTimer = 30;
 
     public Game(string activity, string description)

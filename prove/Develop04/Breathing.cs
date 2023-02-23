@@ -3,21 +3,51 @@ using System;
 public class Breathing : Game
 {
     const string _name = "Breathe";
-    const string _description = "This activity will help you relax by walking your through breathing in and out slowly.Clear your mind and focus on your breathing.";
+    const string _description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
     const string _breatheIn = "Breathe in ...";
-    const string _breathOut = "Breathe out ...";
+    const string _breathOut = "Now breathe out ...";
+    const int _breathingTime = 4;
     public Breathing(string name = _name, string description = _description) : base(name, description)
     { }
 
     public void Play()
     {
         this.ShowStartMessage();
-        //Do for duration - something like do while this.Timer ???
-        //breath in
-        //spinner
-        //breathe out 
-        //spinner
+
+        Spinner spinner = new Spinner(3);
+        Console.WriteLine("Get ready ...\n");
+        spinner.Spin();
+
+        Timer timer = new Timer();
+        timer.Start(this._duration);
+        do
+        {
+            Console.Write(_breatheIn);
+            Countdown();
+            Console.Write("\b \b");
+            Console.Write(".");
+            Console.WriteLine();
+
+            Console.Write(_breathOut);
+            Countdown();
+            Console.Write("\b \b");
+            Console.Write(".");
+            Console.WriteLine();
+            Console.WriteLine();
+
+        } while (timer.HasTime());
+
         this.ShowEndMessage();
+    }
+
+    private void Countdown()
+    {
+        for (int i = _breathingTime; i > 0; i--)
+        {
+            Thread.Sleep(1000);         //sleep one second
+            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+            Console.Write($"{i}");
+        }
     }
 
 }
