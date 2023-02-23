@@ -4,8 +4,6 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("BOB");
-
         Menu menu = new Menu();
         do
         {
@@ -13,10 +11,9 @@ class Program
             if (menu.Input() == "1")
             {
                 Console.Clear();
-                Console.WriteLine("Breathing");
+                //Console.WriteLine("Breathing");
                 Breathing game = new Breathing();
                 game.Play();
-
             }
             else if (menu.Input() == "2")
             {

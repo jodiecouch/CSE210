@@ -31,7 +31,12 @@ public class Game
 
     public void ShowEndMessage()
     {
-        Console.WriteLine("Ending Message");
+        Console.WriteLine("Well done you!");
+        Spinner spinner = new Spinner(2);
+        spinner.Spin();
+        Console.WriteLine($"You participated in {_activityName} for {_duration} seconds.");
+        spinner.Spin();
+        Console.Write("\b \b");
     }
 
 

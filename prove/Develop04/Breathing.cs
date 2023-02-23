@@ -2,7 +2,7 @@ using System;
 
 public class Breathing : Game
 {
-    const string _name = "Breathe";
+    const string _name = "Just Breathe";
     const string _description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.";
     const string _breatheIn = "Breathe in ...";
     const string _breathOut = "Now breathe out ...";
@@ -28,6 +28,9 @@ public class Breathing : Game
             Console.Write(".");
             Console.WriteLine();
 
+            //CHECK TIME
+            if (!timer.HasTime()) { break; }
+
             Console.Write(_breathOut);
             Countdown();
             Console.Write("\b \b");
@@ -44,9 +47,10 @@ public class Breathing : Game
     {
         for (int i = _breathingTime; i > 0; i--)
         {
-            Thread.Sleep(1000);         //sleep one second
+            //sleep one second
             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
             Console.Write($"{i}");
+            Thread.Sleep(1000);
         }
     }
 
