@@ -4,7 +4,7 @@ public class Listing : Game
 {
     const string _name = "Listing";
     const string _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area.";
-    const int _gameTime = 2;
+    const int _gameTime = 5;
     private List<string> _promptList = new List<string>();
     private int _p = 0;
     public Listing(string name = _name, string description = _description) : base(name, description)
@@ -16,12 +16,11 @@ public class Listing : Game
     {
         this.ShowStartMessage();
         int counter = 0;
-        Spinner spinner = new Spinner(_gameTime);
-        Timer timer = new Timer();
 
-        Console.WriteLine("List as many responses as you canto the following prompt:");
+        Console.WriteLine("List as many responses as you can to the following prompt:");
         Console.WriteLine(GetPrompt());
-        spinner.Spin();
+        this.Pause(_gameTime);
+
         Console.WriteLine("Begin now.");
         timer.Start(this._duration);
         string response;

@@ -13,13 +13,10 @@ public class Breathing : Game
     public void Play()
     {
         this.ShowStartMessage();
-
-        Spinner spinner = new Spinner(3);
         Console.WriteLine("Get ready ...\n");
-        spinner.Spin();
+        this.Pause(2);
 
-        Timer timer = new Timer();
-        timer.Start(this._duration);
+        timer.Start(_duration);
         do
         {
             Console.Write(_breatheIn);
@@ -28,7 +25,6 @@ public class Breathing : Game
             Console.Write(".");
             Console.WriteLine();
 
-            //CHECK TIME
             if (!timer.HasTime()) { break; }
 
             Console.Write(_breathOut);

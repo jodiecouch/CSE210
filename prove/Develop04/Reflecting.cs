@@ -5,7 +5,7 @@ public class Reflecting : Game
     const string _name = "Reflection";
     const string _description = "This activity will help you reflect on times in your " +
     "life when you have shown strength and resilience. \nThis will help you recognize the power you have and how you can use it in other aspects of your life.";
-    const int _reflectTime = 2;
+    const int _reflectTime = 5;
     private List<string> _promptList = new List<string>();
     private List<string> _questionList = new List<string>();
     private int _p = 0;
@@ -21,9 +21,8 @@ public class Reflecting : Game
     {
         this.ShowStartMessage();
         string response;
-        Spinner spinner = new Spinner(_reflectTime);
-        Timer timer = new Timer();
-        timer.Start(this._duration);
+
+        timer.Start(_duration);
         do
         {
             Console.WriteLine(GetPrompt());
@@ -35,7 +34,7 @@ public class Reflecting : Game
                 if (timer.HasTime())
                 {
                     Console.WriteLine(GetQuestion());
-                    spinner.Spin();
+                    this.Pause(_reflectTime);
                 }
                 else
                 {
