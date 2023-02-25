@@ -16,6 +16,7 @@ public class Spinner
         timer.Start(_duration);
         do
         {
+            Console.CursorVisible = false;
             counter++;
             switch (counter % 4)
             //from stack overflow
@@ -25,10 +26,12 @@ public class Spinner
                 case 2: Console.Write("\\"); break;
                 case 3: Console.Write("|"); break;
             }
-            Thread.Sleep(500);
-            Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+            Thread.Sleep(600);
+            // Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
+            Console.Write("\b \b");
 
         } while (timer.HasTime());
+        Console.CursorVisible = true;
 
     }
 

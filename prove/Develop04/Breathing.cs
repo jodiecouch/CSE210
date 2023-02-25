@@ -45,6 +45,7 @@ public class Breathing : Game
 
     private void Countdown()
     {
+        Console.CursorVisible = false;
         for (int i = _breathingTime; i > 0; i--)
         {
             //sleep one second
@@ -52,6 +53,7 @@ public class Breathing : Game
             Console.Write($"{i}");
             Thread.Sleep(1000);
         }
+        Console.CursorVisible = true;
     }
 
 }
