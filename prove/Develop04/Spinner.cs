@@ -25,7 +25,7 @@ public class Spinner
                 case 2: Console.Write("\\"); break;
                 case 3: Console.Write("|"); break;
             }
-            Thread.Sleep(100);
+            Thread.Sleep(500);
             Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
 
         } while (timer.HasTime());

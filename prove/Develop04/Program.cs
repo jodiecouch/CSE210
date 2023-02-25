@@ -18,10 +18,14 @@ class Program
             else if (menu.Input() == "2")
             {
                 Console.WriteLine("Reflecting");
+                Reflecting reflect = new Reflecting();
+                reflect.Play();
             }
             else if (menu.Input() == "3")
             {
                 Console.WriteLine("Listing");
+                Listing listIt = new Listing();
+                listIt.Play();
             }
             else
             {
