@@ -17,15 +17,24 @@ class Program
                 if (goalType == "1")
                 {
                     Console.WriteLine("You picked a simple goal");
+                    SimpleGoal goal = new SimpleGoal();
+                    
                 }
                 else if (goalType == "2")
                 {
                     Console.WriteLine("You picked eternal goal");
+                    EternalGoal goal = new EternalGoal();
+                    
                 }
                 else if (goalType == "3")
                 {
                     Console.WriteLine("You picked a checklist goal");
+                    ChecklistGoal goal = new ChecklistGoal();
                 }
+
+                goal.SetupNewGoal();
+                goal.DisplayGoal();
+                game.AddGoal(goal);
             }
             else if (menu.Input() == "2")
             {
