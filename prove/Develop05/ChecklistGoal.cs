@@ -13,7 +13,7 @@ public class ChecklistGoal : Goal
 
     public override void SetCompleted()
     {
-        _completed = (_completedCounter > = _bonusCount);
+        _completed = (_completedCounter >= _bonusCount);
     }
     public override string DisplayGoal()
     {
@@ -33,7 +33,7 @@ public class ChecklistGoal : Goal
     private void SetBonusPoints()
     {
         string bonusPrompt = "Enter the bonus points. ";
-        setNumber(bonusPrompt, _bonusPoints);
+        SetNumber(bonusPrompt, _bonusPoints);
     }
     private void SetBonusCount()
     {

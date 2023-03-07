@@ -1,11 +1,11 @@
 using System;
 public class Goal
 {
-    private string _name;
-    private string _description;
-    private int _points;
-    private bool _completed;
-    private const string = "How many points for accomplishing this goal: "
+    protected string _name;
+    protected string _description;
+    protected int _points;
+    protected bool _completed;
+    private const string _defaultPointPrompt = "How many points for accomplishing this goal: ";
 
     public Goal()
     {
@@ -16,7 +16,7 @@ public class Goal
     {
         return _name;
     }
-    private void SetName()
+    public void SetName()
     {
         Console.WriteLine("Enter the goal name: ");
         _name = Console.ReadLine();
@@ -25,7 +25,7 @@ public class Goal
     {
         return _description;
     }
-    private void SetDescription()
+    public void SetDescription()
     {
         Console.WriteLine("Enter a short description: ");
         _description = Console.ReadLine();
@@ -48,13 +48,13 @@ public class Goal
         }while (isValid == false);
 
     }
-    public bool isCompleted()
+    public virtual bool isCompleted()
     {
         return _completed;
     }
-    public virtual void SetCompleted(bool finnished)
+    public virtual void SetCompleted()
     {
-        _completed = finnished;
+         _completed = this.isCompleted();
     }
     public virtual string DisplayGoal()
     {
@@ -68,7 +68,7 @@ public class Goal
     }
     public void SetPoints()
     {
-        SetNumber(_defaultPointPrompt, _points)
+        SetNumber(_defaultPointPrompt, _points);
     }
 
 
