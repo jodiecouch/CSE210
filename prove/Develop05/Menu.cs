@@ -4,7 +4,8 @@ public class Menu
 {
     private string _input;
     private bool _play;
-    private string _main = "1. Create New Goal\n" +
+    private string _main = "Menu Options:\n" +
+    "1. Create New Goal\n" +
     "2. List Goals\n" +
     "3. Save Goals\n" +
     "4. Load Goals\n" +

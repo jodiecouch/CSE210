@@ -34,18 +34,25 @@ public class Goal
     {
         return _points;
     }
-    public void SetNumber(string prompt, int points)
+    public int GetANumber(string prompt)
     {
         Console.WriteLine(prompt);
         bool isValid = false;
-        do{
+        int points;
+        do
+        {
             string results = Console.ReadLine();
-            if (Int32.TryParse(results, out points)){
+            if (Int32.TryParse(results, out points))
+            {
                 isValid = true;
-            }else{
+            }
+            else
+            {
                 Console.WriteLine("Please enter an integer value.");
             }
-        }while (isValid == false);
+        } while (isValid == false);
+
+        return points;
 
     }
     public virtual bool isCompleted()
@@ -54,11 +61,16 @@ public class Goal
     }
     public virtual void SetCompleted()
     {
-         _completed = this.isCompleted();
+        _completed = this.isCompleted();
     }
-    public virtual string DisplayGoal()
+    public virtual void DisplayGoal()
     {
-        return ($"{_name} - ({_description})");
+        string completedDisplay = "[]";
+        if (isCompleted())
+        {
+            completedDisplay = "[X]";
+        }
+        Console.WriteLine($"{completedDisplay} {_name} - ({_description})");
     }
     public virtual void SetupNewGoal()
     {
@@ -68,7 +80,17 @@ public class Goal
     }
     public void SetPoints()
     {
-        SetNumber(_defaultPointPrompt, _points);
+        _points = GetANumber(_defaultPointPrompt);
+    }
+    public virtual string Stringify()
+    {
+        string item;
+        item = "Name:" + this._name + ";" +
+        "Description:" + this._description + ";Points:" + this._points +
+        ";Completed:" + this._completed + ";";
+
+        return item;
+
     }
 
 
