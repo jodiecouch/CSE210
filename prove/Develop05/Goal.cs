@@ -93,5 +93,10 @@ public class Goal
 
     }
 
+    public virtual void LoadGoal()
+    {
+
+    }
+
 
 }

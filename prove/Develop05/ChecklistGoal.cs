@@ -10,6 +10,16 @@ public class ChecklistGoal : Goal
     {
         _completedCounter = 0;
     }
+    public ChecklistGoal(string name, string description, int points, bool completed, int completedCounter, int BonusPoints, int bonusCount)
+    {
+        _name = name;
+        _description = description;
+        _points = points;
+        _completed = completed;
+        _completedCounter = completedCounter;
+        _bonusPoints = BonusPoints;
+        _bonusCount = bonusCount;
+    }
 
     public override string Stringify()
     {

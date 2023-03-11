@@ -4,12 +4,12 @@ public class EternalGoal : Goal
 {
     public EternalGoal()
     { }
-    public EternalGoal(Goal goal)
+    public EternalGoal(string name, string description, int points)
     {
-        this._name = goal.GetName();
-        this._description = goal.GetDescription();
-        this._completed = goal.isCompleted();
-        this._points = goal.GetPoints();
+        _name = name;
+        _description = description;
+        _points = points;
+        _completed = false;
     }
     public override void SetCompleted()
     {
