@@ -6,7 +6,7 @@ using System.Web;
 public class GameOfGoals
 {
     List<Goal> _goals = new List<Goal>();
-    int _points;
+    int _points = 0;
 
 
     public void AddGoal(Goal newGoal)
@@ -20,9 +20,11 @@ public class GameOfGoals
     }
     public void ListAllGoals()
     {
+        int i = 1;
         _goals.ForEach(delegate (Goal goal)
         {
-            goal.DisplayGoal();
+            Console.WriteLine($"{i}. {goal.DisplayGoal()}");
+            i++;
         });
     }
 
@@ -161,6 +163,11 @@ public class GameOfGoals
             {
                 SimpleGoal simple = new SimpleGoal(name, description, points, completed);
                 _goals.Add(simple);
+                if (completed)
+                {
+                    simple.SetCompleted();
+                    _points += simple.GetPointsEarned();
+                }
             }
             if (goalType == "Eternal Goal")
             {
@@ -179,6 +186,35 @@ public class GameOfGoals
     public void RecordEvent()
     {
         //pick a goal to record event for
+        //create a menu of the goals
+        bool isValid = false;
+        string input;
+        int index;
+
+        do
+        {
+            ListAllGoals();
+            Console.WriteLine("Which goal would you like to update?");
+            input = Console.ReadLine();
+            if (Int32.TryParse(input, out index))
+            {
+                if (index <= _goals.Count)
+                {
+                    isValid = true;
+                }
+            }
+            if (!isValid)
+            {
+                Console.WriteLine("Please enter a number from the list.");
+            }
+        } while (isValid == false);
+
+        var goal = _goals.ElementAt(index - 1);
+        if (!goal.isCompleted())
+        {
+            goal.SetCompleted();
+            _points += goal.GetPointsEarned();
+        }
 
     }
 }

@@ -20,7 +20,6 @@ class Program
                     Console.WriteLine("You picked a simple goal");
                     SimpleGoal goal = new SimpleGoal();
                     goal.SetupNewGoal();
-                    //goal.DisplayGoal();
                     game.AddGoal(goal);
 
 
@@ -30,7 +29,6 @@ class Program
                     Console.WriteLine("You picked eternal goal");
                     EternalGoal goal = new EternalGoal();
                     goal.SetupNewGoal();
-                    //goal.DisplayGoal();
                     game.AddGoal(goal);
 
                 }
@@ -39,7 +37,6 @@ class Program
                     Console.WriteLine("You picked a checklist goal");
                     ChecklistGoal goal = new ChecklistGoal();
                     goal.SetupNewGoal();
-                    //goal.DisplayGoal();
                     game.AddGoal(goal);
                 }
             }
@@ -50,18 +47,21 @@ class Program
             }
             else if (menu.Input() == "3")
             {
-                Console.WriteLine("Save Goals");
-                game.SaveGoals("bob.txt");
+                Console.WriteLine("What would you like to name the file?");
+                string fName = Console.ReadLine();
+                game.SaveGoals(fName);
             }
             else if (menu.Input() == "4")
             {
-                Console.WriteLine("Load Goals");
-                game.LoadGoals("bob.txt");
+                Console.WriteLine("What file would you like to load?");
+                string fName = Console.ReadLine();
+                game.LoadGoals(fName);
 
             }
             else if (menu.Input() == "5")
             {
                 Console.WriteLine("Record Event");
+                game.RecordEvent();
 
             }
             else

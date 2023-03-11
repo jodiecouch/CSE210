@@ -5,6 +5,7 @@ public class Goal
     protected string _description;
     protected int _points;
     protected bool _completed;
+    protected int _pointsEarned = 0;
     private const string _defaultPointPrompt = "How many points for accomplishing this goal: ";
 
     public Goal()
@@ -30,10 +31,16 @@ public class Goal
         Console.WriteLine("Enter a short description: ");
         _description = Console.ReadLine();
     }
-    public int GetPoints()
+    public void SetPoints()
     {
-        return _points;
+        //points user can earn for completing the goal
+        _points = GetANumber(_defaultPointPrompt);
     }
+    public virtual int GetPointsEarned()
+    {
+        return _pointsEarned;
+    }
+
     public int GetANumber(string prompt)
     {
         Console.WriteLine(prompt);
@@ -61,16 +68,18 @@ public class Goal
     }
     public virtual void SetCompleted()
     {
-        _completed = this.isCompleted();
+        _completed = true;
+        _pointsEarned = _points;
+
     }
-    public virtual void DisplayGoal()
+    public virtual string DisplayGoal()
     {
         string completedDisplay = "[]";
         if (isCompleted())
         {
             completedDisplay = "[X]";
         }
-        Console.WriteLine($"{completedDisplay} {_name} - ({_description})");
+        return ($"{completedDisplay} {_name} - ({_description})");
     }
     public virtual void SetupNewGoal()
     {
@@ -78,10 +87,7 @@ public class Goal
         SetDescription();
         SetPoints();
     }
-    public void SetPoints()
-    {
-        _points = GetANumber(_defaultPointPrompt);
-    }
+
     public virtual string Stringify()
     {
         string item;
@@ -92,11 +98,5 @@ public class Goal
         return item;
 
     }
-
-    public virtual void LoadGoal()
-    {
-
-    }
-
 
 }

@@ -14,6 +14,7 @@ public class EternalGoal : Goal
     public override void SetCompleted()
     {
         _completed = false;
+        _pointsEarned = _points;
     }
 
 }
