@@ -45,7 +45,12 @@ public class ChecklistGoal : Goal
 
     public override string DisplayGoal()
     {
-        return ($"{_name} - ({_description}) You have completed {_completedCounter}/{_bonusCount}");
+        string completedDisplay = "[]";
+        if (isCompleted())
+        {
+            completedDisplay = "[X]";
+        }
+        return ($"{completedDisplay} {_name} - ({_description}) You have completed {_completedCounter}/{_bonusCount}");
     }
     public override void SetupNewGoal()
     {

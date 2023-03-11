@@ -1,1 +1,5 @@
-Type:Simple Goal;Name:Baking;Description:Make a cake;Points:25;Completed:False;
+Type:Simple Goal;Name:Cake;Description:Bake a cake;Points:50;Completed:False;
+Type:Simple Goal;Name:Decorate;Description:Decorate a cake;Points:50;Completed:True;
+Type:Checklist Goal;Name:Harrow;Description:Harrow the pastures;Points:50;Completed:False;CompletedCounter:0;BonusPoints:1000;BonusCount:3;
+Type:Eternal Goal;Name:Dishes;Description:Do the dishes;Points:100;Completed:False;
+GamePoints:150;

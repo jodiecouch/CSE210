@@ -1,0 +1,4 @@
+Type:Checklist Goal;Name:Dishes;Description:wash the dishes;Points:50;Completed:False;CompletedCounter:0;BonusPoints:500;BonusCount:3;
+Type:Eternal Goal;Name:Scriptures;Description:Read from the scriptures;Points:50;Completed:False;
+Type:Simple Goal;Name:Taxes;Description:Finish taxes;Points:1000;Completed:False;
+GamePoints:0;
