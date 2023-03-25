@@ -15,10 +15,10 @@ public class Address
         _country = country;
     }
 
-    public void DisplayAddress()
+    public string GetAddress()
     {
-        Console.WriteLine(_street);
-        Console.WriteLine($"{_city} {_state}, {_country}");
+        string address = $"{_street}\r\n{_city} {_state}, {_country}";
+        return address;
     }
 
     public string GetCountry()

@@ -7,12 +7,12 @@ public class Products
     private double _price;
     private int _qty;
 
-    public Products(int id, string name, double price, int quantity)
+    public Products(int id, string name, double price)
     {
         _id = id;
         _name = name;
         _price = price;
-        _qty = quantity;
+        _qty = 1;
 
     }
 
@@ -23,5 +23,9 @@ public class Products
     public string lineItem()
     {
         return ($"Item: {_name} Id: {_id} Price: {_price} Quantity: {_qty} Total Price: {lineItemPrice()}");
+    }
+    public void SetQuantity(int newQty)
+    {
+        _qty = newQty;
     }
 }
