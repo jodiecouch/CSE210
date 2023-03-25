@@ -1,4 +1,0 @@
-Type:Simple Goal;Name:Pickles;Description:Make pats pickles;Points:100;Completed:True;
-Type:Eternal Goal;Name:exercise;Description:workout and get ripped;Points:25;Completed:False;
-Type:Checklist Goal;Name:Roses;Description:Trim the roses;Points:25;Completed:False;CompletedCounter:1;BonusPoints:1000;BonusCount:3;
-GamePoints:0;
