@@ -9,9 +9,22 @@ public class Order
     {
         _customer = customer;
     }
-    public void AddToOrder(Products product)
+    public void AddToOrder(Item item, int Qty)
     {
+        Products product = new Products(item.Id(), item.Name(), item.Price(), Qty);
         _products.Add(product);
+    }
+
+    private double shipping()
+    {
+        if (_customer.residentUSA())
+        {
+            return 5;
+        }
+        else
+        {
+            return 35;
+        }
     }
 
     private double CalculateTotalOrderPrice()
@@ -21,34 +34,30 @@ public class Order
         {
             total += p.lineItemPrice();
         }
-        if (_customer.residentUSA())
-        { total += 5; }
-        else
-        {
-            total += 35;
-        }
+        total += shipping();
         return total;
     }
     public void PackingLabel()
     {
-        string header = $"{_customer.GetName()}\r\n{_customer.GetAddress()}";
-        Console.WriteLine(header);
 
-        Console.Write("Items");
+        //ShippingLabel();
+
+        Console.Write("Order");
         string lineItems = "";
         foreach (Products p in _products)
         {
-            lineItems = Environment.NewLine + p.lineItem();
+            lineItems = lineItems + Environment.NewLine + p.lineItem();
         }
         Console.WriteLine(lineItems);
-
+        Console.WriteLine($"Shipping: {shipping()}");
         Console.WriteLine($"Order Total: {CalculateTotalOrderPrice()}");
 
     }
 
     public void ShippingLabel()
     {
-
+        string header = $"{_customer.GetName()}\r\n{_customer.GetAddress()}";
+        Console.WriteLine(header);
     }
 
 

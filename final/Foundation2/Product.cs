@@ -7,12 +7,12 @@ public class Products
     private double _price;
     private int _qty;
 
-    public Products(int id, string name, double price)
+    public Products(int id, string name, double price, int qty)
     {
         _id = id;
         _name = name;
         _price = price;
-        _qty = 1;
+        _qty = qty;
 
     }
 
@@ -28,4 +28,5 @@ public class Products
     {
         _qty = newQty;
     }
+
 }
