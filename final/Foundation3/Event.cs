@@ -1,35 +1,35 @@
 using System;
 public class Event
 {
-    protected string _type;
-    protected string _title;
-    protected string _description;
-    protected string _date;
-    protected string _time;
-    protected string _address;
 
-    public Event(string type, string title, string description, string date, string time, string address)
+    private string _title;
+    private string _description;
+    private string _date;
+    private string _time;
+    private Address _address;
+
+    public Event(string title, string description, string date, string time, string street, string city, string state, string country)
 
     {
-        _type = type;
         _title = title;
         _description = description;
         _date = date;
         _time = time;
-        _address = address;
+        _address = new Address(street, city, state, country);
     }
 
-    public void DisplayStandard()
+    public string Standard()
     {
-        Console.WriteLine($"{_title}\r\n{_description}\r\n{_date} {_time}\r\n{_address}");
+        return $"{_title}\r\n{_description}\r\n{_date} {_time}\r\n{_address.GetAddress()}";
     }
-    public void DisplayShort()
+    public string Short()
     {
-        Console.WriteLine($"{_type} - {_title} - {_date}");
+        return $"{GetType()} - {_title} - {_date}";
     }
-    public void DisplayFull()
+    public virtual string FullDetails()
     {
-        Console.WriteLine($"{_title}\r\n{_description}\r\n{_date} {_time}\r\n{_address}");
+        string msg = Standard();
+        return msg;
     }
 
 
