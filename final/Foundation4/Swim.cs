@@ -14,28 +14,6 @@ public class Swim : Activity
         double distance = (_laps * 50) / 620;
         return distance;
     }
-    public override double Speed()
-    {
-        double speed;
-        if (_minutes != 0)
-        {
-            speed = (Distance() / _minutes) * 60;
-        }
-        else
-        {
-            speed = 0;
-        }
-        return speed;
-    }
-    public override double Pace()
-    {
-        double pace = 0;
-        if (Distance() != 0)
-        {
-            pace = _minutes / Distance();
-        }
-        return pace;
 
-    }
 
 }

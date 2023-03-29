@@ -2,7 +2,7 @@ using System;
 
 public class Cycle : Activity
 {
-    private double _speed;
+    private double _speed;  //mph
 
     public Cycle(string date, double minutes, double speed) : base(date, minutes)
     {
@@ -17,13 +17,5 @@ public class Cycle : Activity
     {
         return _speed;
     }
-    public override double Pace()
-    {
-        double pace = 0;
-        if (_speed != 0)
-        {
-            pace = 60 / _speed;
-        }
-        return pace;
-    }
+
 }
